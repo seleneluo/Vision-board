@@ -1,0 +1,7 @@
+{
+  "name": "愿景板",
+  "description": "A high-end, psychologically-driven vision board platform utilizing Mental Contrasting and Visual Anchoring to manifest your ideal future through guided creation and elegant aesthetics.",
+  "requestFramePermissions": [
+    "camera"
+  ]
+}
