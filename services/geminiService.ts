@@ -9,7 +9,9 @@ export async function generateAffirmation(category: string, theme: string): Prom
     The affirmation should be in the present tense (e.g., "I am..." or "I have..."). 
     Keep it concise and elegant. Avoid clichés.`,
   });
-  return response.text?.trim() || "I am manifesting my highest potential.";
+  // Use .text property directly as it returns the string output.
+  const text = response.text;
+  return text ? text.trim() : "I am manifesting my highest potential.";
 }
 
 export async function suggestImageThemes(category: string): Promise<string[]> {
@@ -29,7 +31,9 @@ export async function suggestImageThemes(category: string): Promise<string[]> {
   });
   
   try {
-    return JSON.parse(response.text || "[]");
+    // Access .text property for the JSON response string.
+    const text = response.text;
+    return JSON.parse(text || "[]");
   } catch {
     return ["Dream scene 1", "Visual anchor 2", "Inspirational setting"];
   }
